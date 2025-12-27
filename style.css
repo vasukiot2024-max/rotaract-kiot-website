@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #0b2a4a; /* Navy Blue */
+}
+
+.navbar .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 25px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    color: #e63946; /* Rotaract Red */
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(11,42,74,0.7), rgba(11,42,74,0.7));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* PAGE CONTENT */
+.page {
+    padding: 60px 80px;
+}
+
+.page h1 {
+    color: #0b2a4a;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #0b2a4a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+/* SMOOTH TRANSITIONS */
+* {
+    transition: all 0.3s ease;
+}
+
+/* NAVBAR HOVER EFFECT */
+.navbar ul li a:hover {
+    color: #e63946;
+    border-bottom: 2px solid #e63946;
+}
+
+/* BUTTON ANIMATION */
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* CARD HOVER EFFECT */
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+body {
+    cursor: pointer;
+}
+body {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.parallax {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax h1,
+.parallax p {
+    position: relative;
+    transition: transform 0.1s linear;
+}
+.magnetic {
+    display: inline-block;
+    position: relative;
+}
+/* SCROLL REVEAL BASE */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

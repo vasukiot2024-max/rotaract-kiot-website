@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rotaract Club of KIOT</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Rotaract KIOT</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="board.html">Board</a></li>
+        <li><a href="projects.html" class="btn magnetic">Explore Our Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero parallax">
+    <h1>Rotaract Club of KIOT</h1>
+    <p>Empowering Youth Through Leadership & Service</p>
+    <a href="projects.html" class="btn">Explore Our Projects</a>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="mv reveal">
+    <div class="card reveal">
+        <h2>Our Mission</h2>
+        <p>
+            To develop leadership skills, promote professional growth and
+            serve the community through impactful initiatives.
+        </p>
+    </div>
+
+    <div class="card reveal">
+        <h2>Our Vision</h2>
+        <p>
+            To create socially responsible leaders who drive positive change
+            at local and global levels.
+        </p>
+    </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="focus">
+    <h2>What We Stand For</h2>
+
+    <div class="focus-cards">
+        <div class="card">
+            <h3>Service</h3>
+            <p>Community driven projects that create real impact.</p>
+        </div>
+
+        <div class="card">
+            <h3>Leadership</h3>
+            <p>Building confident, ethical and responsible leaders.</p>
+        </div>
+
+        <div class="card">
+            <h3>Fellowship</h3>
+            <p>Strong bonds through teamwork, respect and collaboration.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Rotaract Club of KIOT | Service Above Self</p>
+</footer>
+<script>
+document.addEventListener("mousemove", function(e) {
+    const x = (window.innerWidth / 2 - e.clientX) / 30;
+    const y = (window.innerHeight / 2 - e.clientY) / 30;
+
+    document.querySelectorAll(".parallax h1, .parallax p")
+    .forEach(el => {
+        el.style.transform = `translate(${x}px, ${y}px)`;
+    });
+});
+</script>
+<script>
+document.querySelectorAll(".magnetic").forEach(btn => {
+    btn.addEventListener("mousemove", function(e) {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener("mouseleave", function() {
+        btn.style.transform = "translate(0,0)";
+    });
+});
+</script>
+<script>
+window.addEventListener("scroll", function () {
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach(function (el) {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+            el.classList.add("active");
+        }
+    });
+});
+</script>
+</body>
+</html>
+
