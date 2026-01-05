@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Arial, sans-serif;
+    transition: all 0.3s ease;
 }
 
 /* NAVBAR */
@@ -37,6 +38,7 @@
 
 .navbar ul li a:hover {
     color: #e63946; /* Rotaract Red */
+    border-bottom: 2px solid #e63946;
 }
 
 /* HERO */
@@ -70,6 +72,31 @@
     margin-bottom: 20px;
 }
 
+/* BUTTON */
+.btn {
+    padding: 12px 25px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
 /* FOOTER */
 footer {
     background-color: #0b2a4a;
@@ -77,33 +104,14 @@ footer {
     text-align: center;
     padding: 15px;
 }
-/* SMOOTH TRANSITIONS */
-* {
-    transition: all 0.3s ease;
-}
 
-/* NAVBAR HOVER EFFECT */
-.navbar ul li a:hover {
-    color: #e63946;
-    border-bottom: 2px solid #e63946;
-}
-
-/* BUTTON ANIMATION */
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* CARD HOVER EFFECT */
-.card:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+/* BODY ANIMATION */
 body {
     cursor: pointer;
-}
-body {
     animation: fadeIn 1s ease-in;
 }
 
+/* FADE IN */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -114,6 +122,8 @@ body {
         transform: translateY(0);
     }
 }
+
+/* PARALLAX */
 .parallax {
     position: relative;
     overflow: hidden;
@@ -124,11 +134,14 @@ body {
     position: relative;
     transition: transform 0.1s linear;
 }
+
+/* MAGNETIC */
 .magnetic {
     display: inline-block;
     position: relative;
 }
-/* SCROLL REVEAL BASE */
+
+/* SCROLL REVEAL */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
