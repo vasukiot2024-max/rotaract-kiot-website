@@ -152,3 +152,56 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+/* MENU ICON */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 15px;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul.show {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .page {
+        padding: 30px 20px;
+    }
+}
+
+
