@@ -340,6 +340,33 @@ body {
 .member-card:hover::after {
     opacity: 1;
 }
+.photo-holder {
+    background: linear-gradient(135deg, #94a3b8, #e2e8f0);
+    position: relative;
+    overflow: hidden;
+}
+
+/* shimmer animation */
+.photo-holder::before {
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+    animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+
 
 
 
