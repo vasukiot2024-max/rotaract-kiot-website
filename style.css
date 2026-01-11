@@ -40,6 +40,19 @@
     color: #e63946; /* Rotaract Red */
     border-bottom: 2px solid #e63946;
 }
+/* Sticky Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(8px);
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* HERO */
 .hero {
@@ -365,6 +378,7 @@ body {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
 }
+
 
 
 
