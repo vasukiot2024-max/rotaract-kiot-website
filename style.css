@@ -312,6 +312,36 @@ body {
     margin: 0;
     font-weight: 600;
 }
+/* ===== LEVEL 2 : GLASS UI ===== */
+
+.board-section {
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+/* Glass Card */
+.member-card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.35);
+}
+
+/* Glow on hover */
+.member-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.member-card:hover::after {
+    opacity: 1;
+}
+
+
 
 
 
