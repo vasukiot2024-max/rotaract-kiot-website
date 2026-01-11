@@ -247,6 +247,72 @@ body {
     transform: scale(1.08);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
+/* ===========================
+   BOARD OF DIRECTORS SECTION
+=========================== */
+
+.board-section {
+    padding: 60px 80px;
+    background: #f8f9fb;
+}
+
+.board-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0b2a4a;
+}
+
+/* GRID */
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* MEMBER CARD */
+.member-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* PHOTO PLACEHOLDER */
+.photo-holder {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0b2a4a, #1d4ed8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* ROLE COLORS */
+.member-card.president { background: linear-gradient(135deg,#e63946,#ff7a7a); color:#fff; }
+.member-card.vice { background: linear-gradient(135deg,#4361ee,#4cc9f0); color:#fff; }
+.member-card.secretary { background: linear-gradient(135deg,#2a9d8f,#52b69a); color:#fff; }
+.member-card.joint { background: linear-gradient(135deg,#f4a261,#ffb703); color:#fff; }
+.member-card.treasurer { background: linear-gradient(135deg,#3a86ff,#5fa8d3); color:#fff; }
+
+.member-card p {
+    margin: 0;
+    font-weight: 600;
+}
+
 
 
 
