@@ -83,7 +83,21 @@
     <p>© 2025 Rotaract Club of KIOT</p>
 </footer>
 
+<script>
+  const reveals = document.querySelectorAll(".member-card");
+
+  window.addEventListener("scroll", () => {
+    reveals.forEach(card => {
+      const top = card.getBoundingClientRect().top;
+      if (top < window.innerHeight - 50) {
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }
+    });
+  });
+</script>
 </body>
 </html>
+
 
 
