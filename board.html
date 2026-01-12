@@ -8,8 +8,10 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="logo">Rotaract KIOT</div>
+    <span class="menu-toggle">☰</span>
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -19,86 +21,93 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
-    <section class="board-section">
-  <h2 class="board-title">Board of Directors</h2>
 
-  <div class="board-grid">
+<!-- BOARD SECTION -->
+<section class="board-section">
+    <h2>Board of Directors</h2>
 
-    <!-- PRESIDENT -->
-    <div class="member-card president">
-      <div class="photo-holder"></div>
-      <p>President</p>
+    <div class="board-grid">
+
+        <!-- CORE TEAM -->
+        <div class="member-card reveal">
+            <div class="photo-holder"></div>
+            <span class="name-tag">President</span>
+        </div>
+
+        <div class="member-card reveal">
+            <div class="photo-holder"></div>
+            <span class="name-tag">Vice President</span>
+        </div>
+
+        <div class="member-card reveal">
+            <div class="photo-holder"></div>
+            <span class="name-tag">Secretary</span>
+        </div>
+
+        <div class="member-card reveal">
+            <div class="photo-holder"></div>
+            <span class="name-tag">Joint Secretary</span>
+        </div>
+
+        <div class="member-card reveal">
+            <div class="photo-holder"></div>
+            <span class="name-tag">Treasurer</span>
+        </div>
+
+        <!-- DIRECTORS -->
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 1</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 2</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 3</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 4</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 5</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 6</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 7</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 8</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 9</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 10</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 11</span></div>
+        <div class="member-card reveal"><div class="photo-holder"></div><span class="name-tag">Director 12</span></div>
+
     </div>
-
-    <!-- VICE PRESIDENT -->
-    <div class="member-card vice">
-      <div class="photo-holder"></div>
-      <p>Vice President</p>
-    </div>
-
-    <!-- SECRETARY -->
-    <div class="member-card secretary">
-      <div class="photo-holder"></div>
-      <p>Secretary</p>
-    </div>
-
-    <!-- JOINT SECRETARY -->
-    <div class="member-card joint">
-      <div class="photo-holder"></div>
-      <p>Joint Secretary</p>
-    </div>
-
-    <!-- TREASURER -->
-    <div class="member-card treasurer">
-      <div class="photo-holder"></div>
-      <p>Treasurer</p>
-    </div>
-
-    <!-- DIRECTORS -->
-    <div class="member-card"><div class="photo-holder"></div><p>Director 1</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 2</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 3</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 4</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 5</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 6</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 7</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 8</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 9</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 10</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 11</p></div>
-    <div class="member-card"><div class="photo-holder"></div><p>Director 12</p></div>
-
-  </div>
 </section>
 
-
-<section class="page">
-    <h1>Board of Directors</h1>
-    <p>
-        Meet the passionate leaders of Rotaract Club of KIOT
-        who drive service, leadership and fellowship.
-    </p>
-</section>
-
+<!-- FOOTER -->
 <footer>
     <p>© 2025 Rotaract Club of KIOT</p>
 </footer>
 
+<!-- SCRIPT -->
 <script>
-  const reveals = document.querySelectorAll(".member-card");
+    /* Scroll Reveal */
+    const reveals = document.querySelectorAll(".reveal");
 
-  window.addEventListener("scroll", () => {
-    reveals.forEach(card => {
-      const top = card.getBoundingClientRect().top;
-      if (top < window.innerHeight - 50) {
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
-      }
+    function revealOnScroll() {
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight - 100) {
+                el.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    /* Mobile Menu */
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".navbar ul");
+
+    toggle.addEventListener("click", () => {
+        menu.classList.toggle("show");
     });
-  });
 </script>
+
 </body>
 </html>
+
+
 
 
 
