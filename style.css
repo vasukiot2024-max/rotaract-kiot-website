@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,19 +9,28 @@
     transition: all 0.3s ease;
 }
 
-/* NAVBAR */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
-    background-color: #0b2a4a; /* Navy Blue */
+    background-color: #0b2a4a;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .navbar .logo {
     color: white;
-    font-weight: bold;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .navbar ul {
@@ -37,24 +49,21 @@
 }
 
 .navbar ul li a:hover {
-    color: #e63946; /* Rotaract Red */
+    color: #e63946;
     border-bottom: 2px solid #e63946;
 }
-/* Sticky Navbar */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    backdrop-filter: blur(8px);
+
+/* Mobile menu icon */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
 }
 
-/* Smooth scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
     height: 80vh;
     background: linear-gradient(rgba(11,42,74,0.7), rgba(11,42,74,0.7));
@@ -75,7 +84,9 @@ html {
     margin-top: 10px;
 }
 
-/* PAGE CONTENT */
+/* =========================
+   PAGE CONTENT
+========================= */
 .page {
     padding: 60px 80px;
 }
@@ -85,7 +96,9 @@ html {
     margin-bottom: 20px;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
 .btn {
     padding: 12px 25px;
     background-color: #e63946;
@@ -99,7 +112,9 @@ html {
     transform: scale(1.05);
 }
 
-/* CARD */
+/* =========================
+   CARD (Projects / Gallery)
+========================= */
 .card {
     background: white;
     padding: 20px;
@@ -110,7 +125,9 @@ html {
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer {
     background-color: #0b2a4a;
     color: white;
@@ -118,13 +135,13 @@ footer {
     padding: 15px;
 }
 
-/* BODY ANIMATION */
+/* =========================
+   PAGE FADE
+========================= */
 body {
-    cursor: pointer;
     animation: fadeIn 1s ease-in;
 }
 
-/* FADE IN */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -136,44 +153,143 @@ body {
     }
 }
 
-/* PARALLAX */
-.parallax {
+/* =========================
+   PROJECTS GRID
+========================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   BOARD OF DIRECTORS (FINAL)
+========================= */
+.board-section {
+    padding: 60px 30px;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.board-section h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #0b2a4a;
+}
+
+/* Grid */
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Card */
+.member-card {
+    position: relative;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.member-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Glow */
+.member-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+    opacity: 0;
+}
+
+.member-card:hover::after {
+    opacity: 1;
+}
+
+/* Photo placeholder */
+.photo-holder {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #94a3b8, #e2e8f0);
     position: relative;
     overflow: hidden;
 }
 
-.parallax h1,
-.parallax p {
-    position: relative;
-    transition: transform 0.1s linear;
+/* Shimmer */
+.photo-holder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+    animation: shimmer 2.5s infinite;
 }
 
-/* MAGNETIC */
-.magnetic {
-    display: inline-block;
-    position: relative;
+@keyframes shimmer {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
 }
 
-/* SCROLL REVEAL */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+.name-tag {
+    font-weight: 600;
+    color: #0b2a4a;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* MENU ICON */
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
-}
-
-/* MOBILE RESPONSIVE */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 @media (max-width: 768px) {
 
     .navbar {
@@ -196,10 +312,6 @@ body {
         margin-top: 15px;
     }
 
-    .navbar ul li {
-        margin: 10px 0;
-    }
-
     .navbar ul.show {
         display: flex;
     }
@@ -215,173 +327,14 @@ body {
     .page {
         padding: 30px 20px;
     }
-}
-/* PROJECTS GRID */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+
+    .photo-holder {
+        width: 110px;
+        height: 110px;
+    }
 }
 
-.project-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.project-card h3 {
-    color: #0b2a4a;
-    margin-bottom: 10px;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-/* GALLERY GRID */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
-/* ===========================
-   BOARD OF DIRECTORS SECTION
-=========================== */
-
-.board-section {
-    padding: 60px 80px;
-    background: #f8f9fb;
-}
-
-.board-section h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #0b2a4a;
-}
-
-/* GRID */
-.board-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-}
-
-/* MEMBER CARD */
-.member-card {
-    background: white;
-    border-radius: 16px;
-    padding: 25px 20px;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.member-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* PHOTO PLACEHOLDER */
-.photo-holder {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 15px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #0b2a4a, #1d4ed8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    opacity: 0.9;
-}
-
-/* ROLE COLORS */
-.member-card.president { background: linear-gradient(135deg,#e63946,#ff7a7a); color:#fff; }
-.member-card.vice { background: linear-gradient(135deg,#4361ee,#4cc9f0); color:#fff; }
-.member-card.secretary { background: linear-gradient(135deg,#2a9d8f,#52b69a); color:#fff; }
-.member-card.joint { background: linear-gradient(135deg,#f4a261,#ffb703); color:#fff; }
-.member-card.treasurer { background: linear-gradient(135deg,#3a86ff,#5fa8d3); color:#fff; }
-
-.member-card p {
-    margin: 0;
-    font-weight: 600;
-}
-/* ===== LEVEL 2 : GLASS UI ===== */
-
-.board-section {
-    background: linear-gradient(135deg, #eef2ff, #f8fafc);
-}
-
-/* Glass Card */
-.member-card {
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.35);
-}
-
-/* Glow on hover */
-.member-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 16px;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.member-card:hover::after {
-    opacity: 1;
-}
-.photo-holder {
-    background: linear-gradient(135deg, #94a3b8, #e2e8f0);
-    position: relative;
-    overflow: hidden;
-}
-
-/* shimmer animation */
-.photo-holder::before {
-    content: "";
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.6),
-        transparent
-    );
-    animation: shimmer 2.5s infinite;
-}
-
-@keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-.member-card {
-    opacity: 0;
-    transform: translateY(40px);
-}
 
 
 
