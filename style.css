@@ -344,6 +344,85 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+/* ===========================
+   PRO MODE – BOARD SECTION
+   =========================== */
+
+/* Section wrapper */
+.board-section {
+    background: #f9fafb;
+    padding: 70px 20px;
+}
+
+/* Title */
+.board-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #0b2a4a;
+    margin-bottom: 50px;
+}
+
+/* Grid layout */
+.board-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+}
+
+/* Card */
+.member-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Subtle hover */
+.member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* Photo placeholder */
+.photo-holder {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #e5e7eb;
+}
+
+/* Role text */
+.member-card p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0b2a4a;
+}
+
+/* Leadership emphasis (minimal) */
+.member-card.president,
+.member-card.vice {
+    border: 1px solid #e5e7eb;
+}
+
+/* Mobile refinement */
+@media (max-width: 600px) {
+    .board-title {
+        font-size: 24px;
+    }
+
+    .photo-holder {
+        width: 95px;
+        height: 95px;
+    }
+}
+
+
 
 
 
